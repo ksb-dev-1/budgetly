@@ -4,14 +4,14 @@
   "sideEffects": false,
   "type": "module",
   "scripts": {
-    "build": "npx prisma generate && npx remix build",
-    "dev": "npx remix dev",
+    "build": "remix vite:build",
+    "dev": "remix vite:dev",
     "lint": "eslint --ignore-path .gitignore --cache --cache-location ./node_modules/.cache/eslint .",
     "start": "remix-serve ./build/server/index.js",
-    "typecheck": "tsc",
-    "postinstall": "npx prisma generate"
+    "typecheck": "tsc"
   },
   "dependencies": {
+    "@remix-run/dev": "^2.15.2",
     "@prisma/client": "^6.1.0",
     "@remix-run/node": "^2.15.2",
     "@remix-run/react": "^2.15.2",
@@ -24,7 +24,6 @@
     "recharts": "^2.15.0"
   },
   "devDependencies": {
-    "@remix-run/dev": "^2.15.2",
     "@types/bcryptjs": "^2.4.6",
     "@types/react": "^18.2.20",
     "@types/react-dom": "^18.2.7",
