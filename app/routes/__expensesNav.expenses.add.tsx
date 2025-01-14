@@ -25,7 +25,7 @@ export default function ExpensesAddPage() {
         to=".."
         className="absolute top-0 left-0 right-0 bottom-0 z-30"
       ></Link>
-      <div className="absolute z-40 max-w-5xl w-full px-4 sm:px-8 mt-[7rem]">
+      <div className="absolute z-40 max-w-5xl w-full px-8 mt-[7rem]">
         <ExpenseForm text="Add" />
       </div>
     </div>

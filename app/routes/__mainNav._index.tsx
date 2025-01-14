@@ -73,4 +73,4 @@ export default function Index() {
   );
 }
 
-export const handle = { disableJS: true };
+// export const handle = { disableJS: true };

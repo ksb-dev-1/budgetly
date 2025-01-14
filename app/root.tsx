@@ -6,7 +6,7 @@ import {
   Outlet,
   Scripts,
   ScrollRestoration,
-  useMatches,
+  //useMatches,
   useRouteError,
 } from "@remix-run/react";
 import type { LinksFunction } from "@remix-run/node";
@@ -18,10 +18,10 @@ export const links: LinksFunction = () => [
 ];
 
 export function Layout({ children }: { children: React.ReactNode }) {
-  const matches = useMatches();
-  const disableJS = matches.some(
-    (match) => (match.handle as { disableJS?: boolean })?.disableJS
-  );
+  //const matches = useMatches();
+  // const disableJS = matches.some(
+  //   (match) => (match.handle as { disableJS?: boolean })?.disableJS
+  // );
 
   return (
     <html lang="en">
@@ -34,7 +34,8 @@ export function Layout({ children }: { children: React.ReactNode }) {
       <body>
         {children}
         <ScrollRestoration />
-        {!disableJS && <Scripts />}
+        {/* {!disableJS && <Scripts />} */}
+        <Scripts />
       </body>
     </html>
   );
@@ -43,7 +44,7 @@ export function Layout({ children }: { children: React.ReactNode }) {
 export default function App() {
   return (
     <div className="min-h-screen flex justify-center pt-[9rem] pb-[4.5rem]">
-      <div className="max-w-5xl w-full px-4 sm:px-8">
+      <div className="max-w-5xl w-full px-8">
         <Outlet />
       </div>
     </div>

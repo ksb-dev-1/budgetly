@@ -1,21 +1,11 @@
-import { useRef, useState } from "react";
-import { Form, NavLink, useLoaderData } from "@remix-run/react";
+import { NavLink, Form } from "@remix-run/react";
+import { useState } from "react";
+import { GrClose, GrMenu } from "react-icons/gr";
 
-import { useHandleOutsideClick } from "~/hooks/useHandleOutsideClick";
-import { useHandleWindowResize } from "~/hooks/useHandleWindowResize";
-
-import Menu from "~/components/navigation/Menu";
-
-import { GrMenu, GrClose } from "react-icons/gr";
-
-export default function MainNav() {
-  const userID = useLoaderData<string | null>();
-
+export default function Header({ userID }: { userID: string | null }) {
   const [isMenuOpen, setIsMenuOpen] = useState<boolean>(false);
-  const menuRef = useRef<HTMLDivElement>(null);
 
-  useHandleOutsideClick(menuRef, setIsMenuOpen);
-  useHandleWindowResize(isMenuOpen, setIsMenuOpen);
+  console.log(isMenuOpen);
 
   const toggleMenu = () => {
     setIsMenuOpen((prev) => !prev);
@@ -92,13 +82,41 @@ export default function MainNav() {
         </nav>
       </header>
 
-      <Menu
-        ref={menuRef}
-        isMenuOpen={isMenuOpen}
-        toggleMenu={toggleMenu}
-        pricing={true}
-        userID={userID}
-      />
+      {isMenuOpen && (
+        <div className="fixed z-20 top-0 left-0 w-full h-full bg-white">
+          <div className="flex justify-end p-4">
+            <button onClick={toggleMenu} className="text-2xl">
+              <GrClose />
+            </button>
+          </div>
+          <div className="p-8">
+            <NavLink to="/" className="block mb-4" onClick={toggleMenu}>
+              Home
+            </NavLink>
+            {userID && (
+              <NavLink
+                to="/expenses"
+                className="block mb-4"
+                onClick={toggleMenu}
+              >
+                Expenses
+              </NavLink>
+            )}
+            <NavLink to="/pricing" className="block mb-4" onClick={toggleMenu}>
+              Pricing
+            </NavLink>
+            {userID ? (
+              <Form method="post" action="/logout">
+                <button className="block mb-4">Logout</button>
+              </Form>
+            ) : (
+              <NavLink to="/auth" className="block" onClick={toggleMenu}>
+                Login
+              </NavLink>
+            )}
+          </div>
+        </div>
+      )}
     </>
   );
 }
