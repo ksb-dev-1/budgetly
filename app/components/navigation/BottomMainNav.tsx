@@ -13,8 +13,10 @@ export default function BottomMainNav() {
           to="/"
           className={({ isActive }) =>
             `relative h-10 w-10 rounded-full  ${
-              isActive ? "bg-secondary text-primary" : "bg-tertiary text-white"
-            } mr-4 hover:rounded-none transition-all`
+              isActive
+                ? "bg-secondary text-primary hover:bg-amber-300"
+                : "bg-tertiary text-white hover:text-amber-300"
+            } mr-4 transition-colors`
           }
         >
           <AiFillHome className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2" />
@@ -24,8 +26,10 @@ export default function BottomMainNav() {
           to="/expenses"
           className={({ isActive }) =>
             `relative h-10 w-10 rounded-full  ${
-              isActive ? "bg-secondary text-primary" : "bg-tertiary text-white"
-            } mr-4 hover:rounded-none transition-all`
+              isActive
+                ? "bg-secondary text-primary hover:bg-amber-300"
+                : "bg-tertiary text-white hover:text-amber-300"
+            } mr-4 transition-colors`
           }
         >
           <MdOutlineAttachMoney className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2" />
@@ -35,8 +39,10 @@ export default function BottomMainNav() {
           to="/analytics"
           className={({ isActive }) =>
             `relative h-10 w-10 rounded-full  ${
-              isActive ? "bg-secondary text-primary" : "bg-tertiary text-white"
-            } mr-4 hover:rounded-none transition-all`
+              isActive
+                ? "bg-secondary text-primary hover:bg-amber-300"
+                : "bg-tertiary text-white hover:text-amber-300"
+            } mr-4 transition-colors`
           }
         >
           <SiSimpleanalytics className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2" />
@@ -46,8 +52,10 @@ export default function BottomMainNav() {
           to="/pricing"
           className={({ isActive }) =>
             `relative h-10 w-10 rounded-full  ${
-              isActive ? "bg-secondary text-primary" : "bg-tertiary text-white"
-            } mr-4 hover:rounded-none transition-all`
+              isActive
+                ? "bg-secondary text-primary hover:bg-amber-300"
+                : "bg-tertiary text-white hover:text-amber-300"
+            } ml-4 transition-colors`
           }
         >
           <RiMedalFill className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2" />
