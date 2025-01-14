@@ -55,7 +55,7 @@ export default function ExpenseForm({
     <div className="w-full">
       <Form
         method={method === "PATCH" ? "patch" : "post"}
-        className="border border-tertiary p-8 w-full bg-primary"
+        className="border border-tertiary p-8 w-full bg-primary shadow-[0_8px_16px_#000]"
       >
         <h1 className="font-bold text-2xl text-secondary">{text} Expense</h1>
 

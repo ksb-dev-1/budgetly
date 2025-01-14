@@ -35,7 +35,7 @@ export default function PricingPage() {
   return (
     <main className="flex flex-col items-center justify-center">
       <h2 className="font-semibold text-xl sm:text-2xl text-center">
-        Choose a Plan, Unlock Your Potential.
+        Your perfect plan is just a click away.
       </h2>
       <ol
         className="w-full grid sm:grid-cols-2 gap-8 mt-8 sm:mt-16"

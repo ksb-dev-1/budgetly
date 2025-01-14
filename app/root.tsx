@@ -43,7 +43,7 @@ export function Layout({ children }: { children: React.ReactNode }) {
 export default function App() {
   return (
     <div className="min-h-screen flex justify-center pt-[9rem] pb-[4.5rem]">
-      <div className="max-w-5xl w-full px-8">
+      <div className="max-w-5xl w-full px-4 sm:px-8">
         <Outlet />
       </div>
     </div>
