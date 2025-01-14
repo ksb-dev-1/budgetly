@@ -29,7 +29,7 @@ const Menu = forwardRef<HTMLDivElement, MenuProps>(
             isMenuOpen
               ? "translate-y-0 translate-x-0"
               : "translate-y-32 -translate-x-32"
-          } w-[150px] origin-top-left transition duration-700 bg-primary border border-tertiary shadow-[0_8px_8px_#111] p-4 flex flex-col items-center justify-center`}
+          } w-[200px] origin-top-left transition duration-700 bg-primary border border-tertiary shadow-[0_8px_8px_#111] p-8 flex flex-col items-center justify-center`}
         >
           {mainNav && (
             <Link

@@ -72,7 +72,7 @@ export default function ExpenseForm({
           />
         </div>
 
-        <div className="grid sm:grid-cols-2 gap-4">
+        <div className="w-full grid sm:grid-cols-2 gap-4">
           <div className="flex flex-col mt-6">
             <label htmlFor="amount">Amount</label>
             <input
@@ -98,7 +98,7 @@ export default function ExpenseForm({
               defaultValue={
                 defaultValues.date ? defaultValues.date.slice(0, 10) : ""
               }
-              className="mt-1 px-3 py-2 border border-tertiary bg-primary focus:border-trasparent focus:outline-none date-icon-white"
+              className="w-full mt-1 px-3 py-2 border border-tertiary bg-primary focus:border-trasparent focus:outline-none date-icon-white"
             />
           </div>
         </div>
