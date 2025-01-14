@@ -63,7 +63,7 @@ export default function ExpensesBarChart({
 
   return (
     <>
-      <div className="w-full border border-tertiary pt-12 pb-8 pr-4">
+      <div className="w-full border border-tertiary pt-8 pb-4 sm:pt-12 sm:pb-8">
         <div className="flex justify-end">
           <YearsDropdown
             years={years}
