@@ -25,7 +25,7 @@ export default function ExpensesNav() {
         <nav className="max-w-5xl w-full px-8 flex items-center justify-between">
           <NavLink
             to="/"
-            className="font-extrabold text-xl sm:text-2xl text-secondary hover:text-amber-300 transition-all"
+            className="font-extrabold text-2xl text-secondary hover:text-amber-300 transition-all"
           >
             Budgetly
           </NavLink>
