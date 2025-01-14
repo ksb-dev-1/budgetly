@@ -1,14 +1,18 @@
 import { LoaderFunctionArgs } from "@remix-run/node";
 import { Outlet } from "@remix-run/react";
 
+// lib
+import { getUserFromSession } from "~/lib/auth.server";
+
 // components
 import MainNav from "~/components/navigation/MainNav";
-import { getUserFromSession } from "~/lib/auth.server";
+import BottomMainNav from "~/components/navigation/BottomMainNav";
 
 export default function MainNavLayout() {
   return (
     <>
       <MainNav />
+      <BottomMainNav />
       <Outlet />
     </>
   );
