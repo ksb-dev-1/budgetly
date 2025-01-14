@@ -40,20 +40,18 @@ export default function MainNav() {
           </button>
 
           <div className="hidden sm:flex w-fit items-center justify-between">
-            {userID && (
-              <NavLink
-                to="/expenses"
-                className={({ isActive }) =>
-                  `${
-                    isActive
-                      ? "border-b-[3px] border-secondary text-secondary"
-                      : "border-b-[3px] border-transparent"
-                  } flex items-center h-[4.5rem] sm:ml-8 hover:text-secondary transition-colors`
-                }
-              >
-                Expenses
-              </NavLink>
-            )}
+            <NavLink
+              to="/expenses"
+              className={({ isActive }) =>
+                `${
+                  isActive
+                    ? "border-b-[3px] border-secondary text-secondary"
+                    : "border-b-[3px] border-transparent"
+                } flex items-center h-[4.5rem] sm:ml-8 hover:text-secondary transition-colors`
+              }
+            >
+              Expenses
+            </NavLink>
 
             <NavLink
               to="/pricing"
@@ -96,7 +94,7 @@ export default function MainNav() {
         ref={menuRef}
         isMenuOpen={isMenuOpen}
         toggleMenu={toggleMenu}
-        pricing={true}
+        mainNav={true}
         userID={userID}
       />
     </>

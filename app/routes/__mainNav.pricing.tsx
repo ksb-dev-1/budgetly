@@ -19,7 +19,7 @@ const PRICING_PLANS = [
     id: "p1",
     title: "Starter",
     price: "Free forever",
-    perks: ["Up to 1000 expenses / year", "No analytics"],
+    perks: ["Unlimited expenses / year", "No analytics"],
     icon: FaHandshake,
   },
   {

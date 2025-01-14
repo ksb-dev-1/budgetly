@@ -5,12 +5,12 @@ import LogoutButton from "../LogoutButton";
 interface MenuProps {
   isMenuOpen: boolean;
   toggleMenu: () => void;
-  pricing?: boolean;
+  mainNav?: boolean;
   userID?: string | null;
 }
 
 const Menu = forwardRef<HTMLDivElement, MenuProps>(
-  ({ isMenuOpen, toggleMenu, pricing, userID }, ref) => {
+  ({ isMenuOpen, toggleMenu, mainNav, userID }, ref) => {
     const menuRef = useRef<HTMLDivElement>(null);
 
     useImperativeHandle(ref, () => menuRef.current as HTMLDivElement);
@@ -29,40 +29,45 @@ const Menu = forwardRef<HTMLDivElement, MenuProps>(
             isMenuOpen
               ? "translate-y-0 translate-x-0"
               : "translate-y-32 -translate-x-32"
-          } origin-top-left transition duration-700 bg-primary border border-tertiary shadow-[0_8px_16px_#000] p-8 flex flex-col items-center justify-center`}
+          } w-[150px] origin-top-left transition duration-700 bg-primary border border-tertiary shadow-[0_8px_8px_#111] p-4 flex flex-col items-center justify-center`}
         >
-          <Link
-            onClick={toggleMenu}
-            to="/expenses"
-            className="hover:text-secondary transition-colors"
-          >
-            Expenses
-          </Link>
-          {pricing ? (
+          {mainNav && (
             <Link
               onClick={toggleMenu}
-              to="/pricing"
-              className="hover:text-secondary transition-colors my-8"
+              to="/expenses"
+              className="py-2 hover:bg-tertiary transition-colors w-full text-center mb-4"
             >
-              Pricing
+              Expenses
             </Link>
-          ) : (
+          )}
+
+          {!mainNav && (
             <Link
               onClick={toggleMenu}
               to="/analytics"
-              className="hover:text-secondary transition-colors my-8"
+              className="py-2 hover:bg-tertiary transition-colors w-full text-center mb-4"
             >
               Analytics
             </Link>
           )}
 
-          {userID ? (
-            <LogoutButton toggleMenu={toggleMenu} pricing={pricing} />
+          <Link
+            onClick={toggleMenu}
+            to="/pricing"
+            className="py-2 hover:bg-tertiary transition-colors w-full text-center mb-4"
+          >
+            Pricing
+          </Link>
+
+          {!mainNav ? (
+            <LogoutButton toggleMenu={toggleMenu} mainNav={mainNav} />
+          ) : userID ? (
+            <LogoutButton toggleMenu={toggleMenu} mainNav={mainNav} />
           ) : (
             <Link
               onClick={toggleMenu}
               to="/auth"
-              className="hover:text-secondary transition-colors"
+              className="py-2 hover:bg-tertiary transition-colors w-full text-center"
             >
               Login
             </Link>

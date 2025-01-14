@@ -38,7 +38,7 @@ export default function ExpensesNav() {
           </button>
 
           <div className="hidden sm:flex items-center">
-            <NavLink
+            {/* <NavLink
               to="/expenses"
               //end
               //prefetch="render"
@@ -51,7 +51,7 @@ export default function ExpensesNav() {
               }
             >
               Expenses
-            </NavLink>
+            </NavLink> */}
             <NavLink
               to="/analytics"
               className={({ isActive }) =>
@@ -64,12 +64,29 @@ export default function ExpensesNav() {
             >
               Analytics
             </NavLink>
+            <NavLink
+              to="/pricing"
+              className={({ isActive }) =>
+                `${
+                  isActive
+                    ? "border-b-[3px] border-secondary text-secondary"
+                    : "border-b-[3px] border-transparent"
+                } flex items-center h-[4.5rem] ml-8 hover:text-secondary transition-colors`
+              }
+            >
+              Pricing
+            </NavLink>
+
+            <Form
+              method="post"
+              action="logout"
+              className="hidden sm:flex sm:ml-8"
+            >
+              <button className="font-medium bg-secondary px-4 py-2 hover:bg-amber-300 text-primary transition-colors">
+                Logout
+              </button>
+            </Form>
           </div>
-          <Form method="post" action="logout" className="hidden sm:flex">
-            <button className="font-medium bg-secondary px-4 py-2 hover:bg-amber-300 text-primary transition-colors">
-              Logout
-            </button>
-          </Form>
         </nav>
       </header>
 
