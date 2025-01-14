@@ -100,7 +100,7 @@ export default function ExpensesNav() {
             isMenuOpen
               ? "translate-y-0 translate-x-0"
               : "translate-y-32 -translate-x-32"
-          } origin-top-left transition duration-700 bg-primary border border-tertiary shadow-[0_8px_16px_#000] p-4 flex flex-col items-center justify-center`}
+          } origin-top-left transition duration-700 bg-primary border border-tertiary shadow-[0_8px_16px_#000] p-8 flex flex-col items-center justify-center`}
         >
           <Link
             onClick={closeMenu}
